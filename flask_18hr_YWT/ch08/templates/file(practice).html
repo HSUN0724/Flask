@@ -1,0 +1,12 @@
+{% extends "parts/base.html" %}
+{% block title %}Uploaded Image{% endblock title %}
+{% block page_content %}
+{{ super() }}
+<div class="card mx-auto" style="max-width: 32rem;">
+    <img src="{{ url_for('static', filename='uploaded/' ~ filename) }}"
+         class="card-img-top" alt="Uploaded digit image">
+    <div class="card-body text-center">
+        <a href="{{ url_for('index') }}" class="btn btn-primary">&#19978;&#20659;&#21478;&#19968;&#24373;&#22294;&#29255;</a>
+    </div>
+</div>
+{% endblock page_content %}

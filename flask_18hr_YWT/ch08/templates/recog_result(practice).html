@@ -1,0 +1,16 @@
+{% extends "parts/base.html" %}
+{% block title %}Recognition Result{% endblock title %}
+{% block page_content %}
+{{ super() }}
+<div class="row justify-content-center">
+    <div class="col-md-6 text-center">
+        <a href="{{ url_for('uploaded_file', filename=filename) }}">
+            <img src="{{ url_for('static', filename='uploaded/' ~ filename) }}" class="img-fluid img-thumbnail mb-4"
+                style="max-height: 360px;" alt="Uploaded digit image">
+        </a>
+        <p class="fs-4 mb-2">&#36776;&#35672;&#32080;&#26524;&#65306;</p>
+        <div class="display-1 fw-bold text-primary mb-4">{{ result }}</div>
+        <a href="{{ url_for('index') }}" class="btn btn-primary">&#20877;&#36776;&#35672;&#19968;&#24373;</a>
+    </div>
+</div>
+{% endblock page_content %}

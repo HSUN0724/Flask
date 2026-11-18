@@ -1,0 +1,17 @@
+{% extends "parts/base.html" %}
+{% block title %}Digit Recognition{% endblock title %}
+{% block page_content %}
+{{ super() }}
+<h2>&#19978;&#20659;&#25163;&#23531;&#25976;&#23383;&#22294;&#29255;</h2>
+<p class="text-muted">&#35531;&#36984;&#25799;&#21253;&#21547;&#21934;&#19968;&#25163;&#23531;&#25976;&#23383; (0-9)
+    &#30340;&#22294;&#29255;&#12290;</p>
+{% if error %}<div class="alert alert-danger" role="alert">{{ error }}</div>{% endif %}
+<form action="{{ url_for('recognition') }}" method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="image" class="form-label">&#36984;&#25799;&#22294;&#29255;&#27284;&#26696;</label>
+        <input class="form-control" type="file" id="image" name="image" accept=".png,.jpg,.jpeg,.bmp,.gif,.webp,image/*"
+            required>
+    </div>
+    <button type="submit" class="btn btn-primary">&#38283;&#22987;&#36776;&#35672;</button>
+</form>
+{% endblock page_content %}
